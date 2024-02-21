@@ -1,0 +1,76 @@
+<html>
+    <body>
+        <script>
+            alert("Use Ctrl+Shift+J to open console\nDon\'t ask why, just do it!");
+            console.log("Hello World!");
+
+        // Variables
+            // 1) var: can be used throughout the whole program
+            var name = "John";
+            name=34;
+            console.log(name);
+
+            // 2) let: can be used only within the block of code
+            let age = 30;
+            console.log(age);
+
+            // 3) const: cannot be changed. If you try to change, it'll give you an error
+            const pi = 3.14;
+            console.log(pi);
+
+        // String Concatenation
+            let firstName = "John";
+            let lastName = "Doe";
+            let fullName = firstName + " " + lastName;
+            console.log(fullName);
+
+        // String Length
+            let str = "Hello World!";
+            console.log("Length of str=\"Hello World!\": "+ str.length);
+            
+        // String Methods
+            console.log("str.indexOf('World'): "+ str.indexOf('World'));
+            console.log("str.lastIndexOf('World'): "+ str.lastIndexOf('World'));
+            console.log("str.slice(0, 5): "+ str.slice(0, 5));
+            console.log("str.slice(-5): "+ str.slice(-5));
+            console.log("str.slice(0, -5): "+ str.slice(0, -5));
+            console.log("str.replace('World', 'There'): "+ str.replace('World', 'There'));
+            console.log("str.toUpperCase(): "+ str.toUpperCase());
+            console.log("str.toLowerCase(): "+ str.toLowerCase());
+            console.log("str.substring(0, 5): "+ str.substring(0, 5));
+            console.log("str.split(''): "+ str.split(''));
+            console.log("3rd letter of str: "+ str[2]); // Just like in Java
+
+            // Strings are immutable
+            // str[0] = "J"; // This will give an error
+
+
+        // Arrays
+            let fruits = ["apple", "banana", 44];
+            console.log(fruits);
+            console.log(fruits[1]);
+            fruits[3] = "grapes";
+            console.log(fruits);
+
+        // Array Methods
+            console.log("fruits.toString(): "+ fruits.toString());
+            console.log("fruits.join(' * '): "+ fruits.join(' * '));
+            console.log("fruits.pop(): "+ fruits.pop());
+            console.log("fruits.push('kiwi'): "+ fruits.push('kiwi'));
+            console.log("fruits.shift(): "+ fruits.shift());
+            console.log("fruits.unshift('apple'): "+ fruits.unshift('apple'));
+            console.log("fruits.splice(2, 0, 'lemon', 'peach'): "+ fruits.splice(2, 0, 'lemon', 'peach'));
+            console.log("fruits.splice(2, 2): "+ fruits.splice(2, 2));
+            console.log("fruits.concat(['lemon', 'peach']): "+ fruits.concat(['lemon', 'peach']));
+            console.log("fruits.slice(1, 3): "+ fruits.slice(1, 3));
+            console.log("fruits.sort(): "+ fruits.sort());
+            console.log("fruits.reverse(): "+ fruits.reverse());
+            console.log("fruits.sort(function(a, b){return a-b}): "+ fruits.sort(function(a, b){return a-b}));
+
+        
+
+
+        </script>
+    </body>
+
+</html>
