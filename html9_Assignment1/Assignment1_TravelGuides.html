@@ -91,6 +91,11 @@
       text-align: center;
       margin-top: 15px; /* Add margin for better spacing */
     }
+    .travelGuides .checklist td{
+      padding: 10px;
+      text-align: center;
+      font-size:1.5rem;
+    }
 
     </style>
 </head>
@@ -113,13 +118,23 @@
             <tr class="destination">
                 <th>Destination</th>
                 <td>
-                    <select>
+                    <select id="destination">
                         <option value="">-- Select Destination --</option>
-                        <option value="goa">Goa</option>
+                        <option value="jaipur">Jaipur, Rajasthan</option>
+                        <option value="varanasi">Varanasi, Uttar Pradesh</option>
+                        <option value="agra">Agra, Uttar Pradesh</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="leh-ladakh">Leh-Ladakh, Jammu and Kashmir</option>
                         <option value="kerala">Kerala</option>
-                        <option value="rajasthan">Rajasthan</option>
-                        <option value="himachal">Himachal Pradesh</option>
+                        <option value="manali">Manali, Himachal Pradesh</option>
+                        <option value="rishikesh">Rishikesh, Uttarakhand</option>
+                        <option value="goa">Goa</option>
+                        <option value="andaman-nicobar">Andaman and Nicobar Islands</option>
+                        <option value="ranthambore">Ranthambore National Park, Rajasthan</option>
+                        <option value="jim-corbett">Jim Corbett National Park, Uttarakhand</option>
+                        <option value="amritsar">Amritsar, Punjab</option>
                     </select>
+                    
                 </td>
             </tr>
             <tr class="travelMode">
@@ -140,7 +155,73 @@
                 </td>
         </table>
         <button type="submit" class="travelGuides button">Find Your Adventure</button>
-        
+        <br><br><br>
+        <table class="checklist">
+            <tr><td colspan="5">Checklists</td></tr>
+            <tr>
+              <th>Item</th>
+              <th>Goa</th>
+              <th>Kerala</th>
+              <th>Rajasthan</th>
+              <th>Himachal Pradesh</th>
+            </tr>
+            <tr>
+              <td>Sunscreen</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+            </tr>
+            <tr>
+              <td>Insect Repellent</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+            </tr>
+            <tr>
+              <td>Sunglasses</td>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+            </tr>
+            <tr>
+              <td>Camera</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+            </tr>
+            <tr>
+              <td>Hiking Boots</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+            </tr>
+            <tr>
+              <td>Swimsuit</td>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Umbrella</td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Traditional Attire</td>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td></td>
+            </tr>
+          </table>
     </div>
     
 </body>
