@@ -67,8 +67,24 @@
             console.log("fruits.reverse(): "+ fruits.reverse());
             console.log("fruits.sort(function(a, b){return a-b}): "+ fruits.sort(function(a, b){return a-b}));
 
-        
+        // format specifiers (kinda)
+            let xyz = 99;
+            console.log("xyz: %d", xyz);
+            // or
+            console.log("xyz: "+ xyz);
+            // or
+            console.log(`xyz: ${xyz}`);
 
+        // type of
+            console.log("typeof fruits: "+ typeof fruits);
+            console.log("typeof xyz: "+ typeof xyz);
+            console.log("typeof undefined: "+ typeof undefined);
+            console.log("typeof null: "+ typeof null);
+            console.log("typeof {} (object): "+ typeof {});
+            console.log("typeof [] (object): "+ typeof []);
+            console.log("typeof NaN: "+ typeof NaN);
+            console.log("typeof Infinity: "+ typeof Infinity);
+            console.log("typeof function(){}: "+ typeof function(){});
 
         </script>
     </body>

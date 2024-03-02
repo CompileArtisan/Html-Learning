@@ -50,6 +50,11 @@
             color: white;
             font-size: 1.5rem;
         }
+        .menu ul li:hover a {
+            background: linear-gradient(rgba(255,255,255,0.25),rgba(255,255,255,0.25));
+            border-radius: 10px;
+            text-align: left;
+        }
         #option2{
             background: linear-gradient(rgba(255,255,255,0.25),rgba(255,255,255,0.25));
             border-radius: 10px;
@@ -90,6 +95,10 @@
       cursor: pointer;
       text-align: center;
       margin-top: 15px; /* Add margin for better spacing */
+      transition: transform 0.2s ease-in-out;
+    }
+    .travelGuides button:hover {
+      transform: scale(1.1);
     }
     .travelGuides .checklist td{
       padding: 10px;
