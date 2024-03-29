@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeContent() {
+            document.getElementById("content").innerHTML = '<img src="random.jpg" alt="Random Image">';
+        }
+        function addContent(){
+            document.getElementById("lmao").innerHTML += '<img src="random.jpg" alt="Random Image">';
+            
+        }
+    </script>
+</head>
+<body id="lmao">
+    
+    yoooooooooooooooooooooooooooooooo
+    <button onclick="changeContent()">Change Content</button> 
+    <div id="content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quisquam illo, molestiae magnam eveniet enim molestias nesciunt dolores iure earum fuga repellat id aliquid, inventore quidem incidunt aliquam rerum! Numquam.
+    Impedit a incidunt voluptas inventore odio optio voluptatum molestias sapiente aspernatur dolores voluptatem reprehenderit non ad recusandae, eveniet, eos cupiditate nulla possimus, quis soluta corrupti vitae vel dolorem consectetur. Quaerat.
+    </div>
+    <button onclick="addContent()">Add image</button>
+    
+    
+</body>
+</html>
