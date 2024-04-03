@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> hey </h1>
+    <button id="write"> Click to get rich </button>
+    
+    <button id="on/off">0<img id="bulb"></button>
+    <script>
+        var img = document.createElement("img");
+        img.src = "random.jpg";
+        img.alt = "random";
+        img.style.height='300px';
+        document.body.appendChild(img);
+
+        document.getElementById('write').addEventListener('click',function(){
+            document.write('5<br>');
+            document.write('6<br>');
+            document.write('all the previous content gets overwritten')
+        }); //when you use document.write() after you load the document, all previous contents get cleared
+
+        var i=0;
+        document.getElementById('on/off').addEventListener('click',function(){
+            let x = document.getElementById('bulb');
+            if(i++%2==0){
+                x.src = 'bulbOff.gif';
+                document.getElementById('on/off').innerHTML += i;   
+            } else {
+                x.src = 'bulbOn.gif';
+                document.getElementById('on/off').innerHTML += i;
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,10 +1,21 @@
 <html>
     <body>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+        <p id="p7"></p>
+        <p id="p8"></p>
+        <p id="p9"></p>
+        <p id="p10"></p>
+
         <script>
             alert("Use Ctrl+Shift+J to open console\nDon\'t ask why, just do it!");
             console.log("Hello World!");
 
-        // Variables
+        // Variables (can also start with & or underscore)
             // 1) var: can be used throughout the whole program
             var name = "John";
             name=34;
@@ -51,6 +62,9 @@
             console.log(fruits[1]);
             fruits[3] = "grapes";
             console.log(fruits);
+            let cars = new Array();
+            for(let i=0 ; i<3 ; i++) cars[i]='item'+(i+1);
+            console.log(cars);
 
         // Array Methods
             console.log("fruits.toString(): "+ fruits.toString());
@@ -85,6 +99,49 @@
             console.log("typeof NaN: "+ typeof NaN);
             console.log("typeof Infinity: "+ typeof Infinity);
             console.log("typeof function(){}: "+ typeof function(){});
+
+        // functions
+            function myFunction(p1, p2) {
+                return p1 * p2;
+            }
+
+            console.log("myFunction(3, 4): "+ myFunction(3, 4));
+
+        // Objects
+            let person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 50,
+                eyeColor: "blue",
+                5: "five", // this is valid
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+            document.getElementById('p1').innerHTML = person.fullName();
+            document.getElementById('p1').innerHTML = person.fullName; // this would just print the function code itself
+            document.getElementById('p2').innerHTML = person['firstName'];
+            document.getElementById('p3').innerHTML = person.age;
+            document.getElementById('p4').innerHTML = person.eyeColor;
+            document.getElementById('p5').innerHTML = person[5]; // this is valid
+
+            for(x in person) {
+                document.getElementById('p5').innerHTML += person[x] + "<br>";
+            }
+
+        // Arrow Functions
+            const x = (x, y) => x * y;
+            /* same as
+            function x(x,y){
+                return x*y;
+            }
+            */
+            console.log("x(3, 4): "+ x(3, 4));
+
+        // Events
+            function displayDate() {
+                document.getElementById('p7').innerHTML = Date();
+            }
 
         </script>
     </body>
