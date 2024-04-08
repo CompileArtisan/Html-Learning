@@ -13,7 +13,7 @@
 
     <button id = 'rock'>Rock</button>  
 
-    <button id = 'paper' onclick="paperClick()">paper</button>
+    <button id = 'paper'>paper</button>
     
     <button id = 'scissors' onclick="scissorsclick()">scissors</button>
 
@@ -89,7 +89,10 @@
         document.getElementById('reset').onclick = () => {
             document.getElementById('result').innerHTML = 'resetted<br><br><br>';
             score=0;
-        }
+            setTimeout(() => {
+                document.getElementById('result').innerHTML = 'Click any one of the buttons to start playing<br><br>';
+            }, 3000); // 3000 milliseconds = 3 seconds
+        } // setTimeOut(function,time in milliseconds)
 
 
     </script>

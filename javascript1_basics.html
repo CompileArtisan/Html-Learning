@@ -40,8 +40,9 @@
             console.log("Length of str=\"Hello World!\": "+ str.length);
             
         // String Methods
-            console.log("str.indexOf('World'): "+ str.indexOf('World'));
-            console.log("str.lastIndexOf('World'): "+ str.lastIndexOf('World'));
+            console.log("str.indexOf('World'): "+ str.indexOf('World')); // returns index of first occurance of the string
+            console.log("str.lastIndexOf('World'): "+ str.lastIndexOf('World')); // returns index of last occurance of string
+            //both indexOf() and lastIndexOf() return -1 if the string is not found
             console.log("str.slice(0, 5): "+ str.slice(0, 5));
             console.log("str.slice(-5): "+ str.slice(-5));
             console.log("str.slice(0, -5): "+ str.slice(0, -5));
@@ -51,6 +52,15 @@
             console.log("str.substring(0, 5): "+ str.substring(0, 5));
             console.log("str.split(''): "+ str.split(''));
             console.log("3rd letter of str: "+ str[2]); // Just like in Java
+            console.log("str.charAt(2): "+ str.charAt(2)); // Just like in Java
+            console.log("str.charCodeAt(2): "+ str.charCodeAt(2));// returns ASCII/unicode value of the charAt(2)
+            console.log("String.fromCharCode(72): "+ String.fromCharCode(72)); // returns the character of the ASCII value
+            // this is an object of the wrapper class String
+            console.log("str.includes('World'): "+ str.includes('World')); 
+            console.log('str.startsWith("Hello"): '+ str.startsWith("Hello"));
+            console.log('str.endsWith("!"): '+ str.endsWith("!"));
+            console.log('str.length: '+ str.length); //length is an attribute of the object
+            console.log('    hello world   '.trim()); // removes whitespaces from start and end
 
             // Strings are immutable
             // str[0] = "J"; // This will give an error
@@ -80,6 +90,29 @@
             console.log("fruits.sort(): "+ fruits.sort());
             console.log("fruits.reverse(): "+ fruits.reverse());
             console.log("fruits.sort(function(a, b){return a-b}): "+ fruits.sort(function(a, b){return a-b}));
+
+        // Arrays and String stuff
+            console.log("fruits.toString(): "+ fruits.toString());
+            let text = "the quick brown fox jumps over the lazy blue-haired fox";
+            console.log(text.match('fox'));
+            console.log(text.match(/fox/));
+
+        // Regex
+            console.log(text.match(/fox/g));
+            console.log(text.match(/fox/));
+            console.log(text.replace(/fox/g, "dog"));
+            console.log(text.search(/fox/g));
+            console.log(text.split(/fox/g));
+            console.log(/fox/g.test(text));
+
+        // Dates
+            let d = new Date();
+            console.log("d: "+ d);
+            console.log("d.toDateString(): "+ d.toDateString());
+            console.log("d.toTimeString(): "+ d.toTimeString());
+            console.log("d.toISOString(): "+ d.toISOString());
+            console.log("d.toUTCString(): "+ d.toUTCString());
+            
 
         // format specifiers (kinda)
             let xyz = 99;
@@ -130,13 +163,13 @@
             }
 
         // Arrow Functions
-            const x = (x, y) => x * y;
+            const product = (x, y) => x * y;
             /* same as
-            function x(x,y){
+            function product(x,y){
                 return x*y;
             }
             */
-            console.log("x(3, 4): "+ x(3, 4));
+            console.log("x(3, 4): "+ product(3, 4));
 
         // Events
             function displayDate() {
