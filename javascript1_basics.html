@@ -12,8 +12,22 @@
         <p id="p10"></p>
 
         <script>
+        // Popup boxes
+            // 1) alert
             alert("Use Ctrl+Shift+J to open console\nDon\'t ask why, just do it!");
             console.log("Hello World!");
+
+            // 2) confirm
+            let result = confirm("Press a button!");
+            if(result) {
+                document.getElementById('p6').innerHTML = "You pressed OK!";
+            } else {
+                document.getElementById('p6').innerHTML = "You pressed Cancel!";
+            }
+
+            // 3) prompt
+            let lmao = prompt("Enter your name: ");
+            document.getElementById('p8').innerHTML = "Hello " + lmao + "!";
 
         // Variables (can also start with & or underscore)
             // 1) var: can be used throughout the whole program
