@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIE23123_Assignment2a</title>
+    <style>
+        *{
+            font-family: sans-serif;
+            line-height: 2;
+        }
+      body{
+          width: 100%;
+          height:100vh;
+          background-image: linear-gradient(rgba(0,0,50,0.5),rgba(0,0,0,0.5),rgba(0,0,50,0.5)),url('https://github.com/CompileArtisan/TravelTips-HTML/blob/main/backgroundMain2.jpg?raw=true');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+      }
+      
+      .logo{
+        position: fixed;
+        left:0;
+        right:0;
+        background: linear-gradient(rgba(255,255,255,0.15),rgba(255,255,255,0.15));
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        margin: 20px;
+        color: white;
+        text-align: left;
+        padding-left: 20px; 
+        z-index: 2;
+        float:left;
+        padding: 10px 0px 10px 0px;
+      }
+      .main{
+        background: linear-gradient(rgba(255,255,255,0.15),rgba(255,255,255,0.15));
+          backdrop-filter: blur(10px);
+          display: flex;
+          justify-content: center;
+          border-radius: 20px;
+          margin: 20px;
+          color: white;
+          text-align: left;
+          position: relative;
+          z-index: 1;
+      }
+        .content{
+            padding: 20px;
+            width: 50%;
+        }
+        .buttons > *{
+            background-color: #336699;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .buttons > *:hover{
+            transform: scale(1.1);
+        }
+        input[type="radio"] {
+            transform: scale(2);
+        }
+  </style>
+</head>
+<body>
+    <div class="logo"><img src="https://bitly.ws/3ibpB" alt="Travel Tips- QUIZ">
+    </div>
+    <br><br><br><br><br><br>
+    
+    <div class="main">
+        <div class="content">  
+            <h1>Score: <span id="score">0/10</span></h1>  
+            <p id="q"></p>
+        </div>
+        <div class="buttons">
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    
+    <script>
+        let questions = [
+            {
+                question: `<b>Which city is known as the Pink City? </b><br>
+                <input type="radio" name="q1" value="Jaipur"> Jaipur<br>
+                <input type="radio" name="q1" value="Varanasi"> Varanasi<br>
+                <input type="radio" name="q1" value="Agra"> Agra<br>
+                <input type="radio" name="q1" value="Delhi"> Delhi<br>
+                <p id="q1-answer"></p>`,
+                answer: "Jaipur"
+            },
+            {
+                question: `<b>Which country is known for its tulips? </b><br>
+                <input type="radio" name="q2" value="Netherlands"> Netherlands<br>
+                <input type="radio" name="q2" value="Japan"> Japan<br>
+                <input type="radio" name="q2" value="France"> France<br>
+                <input type="radio" name="q2" value="Italy"> Italy<br>
+                <p id="q2-answer"></p>`,
+                answer: "Netherlands"
+            },
+            {
+                question: `<b>What is the capital of Australia? </b><br>
+                <input type="radio" name="q3" value="Sydney"> Sydney<br>
+                <input type="radio" name="q3" value="Melbourne"> Melbourne<br>
+                <input type="radio" name="q3" value="Canberra"> Canberra<br>
+                <input type="radio" name="q3" value="Perth"> Perth<br>
+                <p id="q3-answer"></p>`,
+                answer: "Canberra"
+            },
+            {
+                question: `<b>What is the largest planet in our solar system? </b><br>
+                <input type="radio" name="q4" value="Jupiter"> Jupiter<br>
+                <input type="radio" name="q4" value="Saturn"> Saturn<br>
+                <input type="radio" name="q4" value="Mars"> Mars<br>
+                <input type="radio" name="q4" value="Earth"> Earth<br>
+                <p id="q4-answer"></p>`,
+                answer: "Jupiter"
+            },
+            {
+                question: `<b>Which country is famous for the Great Wall? </b><br>
+                <input type="radio" name="q5" value="China"> China<br>
+                <input type="radio" name="q5" value="India"> India<br>
+                <input type="radio" name="q5" value="USA"> USA<br>
+                <input type="radio" name="q5" value="Brazil"> Brazil<br>
+                <p id="q5-answer"></p>`,
+                answer: "China"
+            },
+            {
+                question: `<b>What is the currency of Japan? </b><br>
+                <input type="radio" name="q6" value="Yen"> Yen<br>
+                <input type="radio" name="q6" value="Dollar"> Dollar<br>
+                <input type="radio" name="q6" value="Euro"> Euro<br>
+                <input type="radio" name="q6" value="Pound"> Pound<br>
+                <p id="q6-answer"></p>`,
+                answer: "Yen"
+            },
+            {
+                question: `<b>Which country is famous for the Eiffel Tower? </b><br>
+                <input type="radio" name="q7" value="France"> France<br>
+                <input type="radio" name="q7" value="Italy"> Italy<br>
+                <input type="radio" name="q7" value="Spain"> Spain<br>
+                <input type="radio" name="q7" value="Germany"> Germany<br>
+                <p id="q7-answer"></p>`,
+                answer: "France"
+            },
+            {
+                question: `<b>What is the largest ocean in the world? </b><br>
+                <input type="radio" name="q8" value="Atlantic"> Atlantic<br>
+                <input type="radio" name="q8" value="Indian"> Indian<br>
+                <input type="radio" name="q8" value="Arctic"> Arctic<br>
+                <input type="radio" name="q8" value="Pacific"> Pacific<br>
+                <p id="q8-answer"></p>`,
+                answer: "Pacific"
+            },
+            {
+                question: `<b>Which country is famous for the Pyramids? </b><br>
+                <input type="radio" name="q9" value="Egypt"> Egypt<br>
+                <input type="radio" name="q9" value="Mexico"> Mexico<br>
+                <input type="radio" name="q9" value="Greece"> Greece<br>
+                <input type="radio" name="q9" value="India"> India<br>
+                <p id="q9-answer"></p>`,
+                answer: "Egypt"
+            },
+            {
+                question: `<b>What is the largest continent in the world? </b><br>
+                <input type="radio" name="q10" value="Asia"> Asia<br>
+                <input type="radio" name="q10" value="Africa"> Africa<br>
+                <input type="radio" name="q10" value="Europe"> Europe<br>
+                <input type="radio" name="q10" value="North America"> North America<br>
+                <p id="q10-answer"></p>`,
+                answer: "Asia"
+            }
+        ];
+
+        let reset = document.getElementById('reset');
+    
+        let i = 0;
+        let score = 0;
+        let next = document.getElementById('next');
+        let prev = document.getElementById('prev');
+        let scoreDisplay = document.getElementById('score');
+        reset.style.display = 'none';
+        let totalQuestions = questions.length;
+        let attemptedFlag = new Array(totalQuestions).fill(false);
+        document.getElementById('q').innerHTML = `${i+1}) `+questions[i].question;
+        next.addEventListener('click', function() {  
+            if(i==8){
+                next.innerHTML = "Finish";
+                next.style.backgroundColor = "green";
+            }
+            if(document.querySelector(`input[name=q${i+1}]:checked`).value == questions[i].answer && !attemptedFlag[i]){
+                scoreDisplay.innerHTML = `${++score}/10`;
+                attemptedFlag[i] = true;
+            }          
+            if (i < totalQuestions - 1) {
+                document.getElementById('q').innerHTML = `${i+2}) `+questions[++i].question;
+            } else {
+                document.getElementById('q').innerHTML = `Quiz Completed! Your score is ${score}/10`;
+                next.style.display = 'none';
+                prev.style.display = 'none';
+                reset.style.display = 'block';
+            }
+        });
+        prev.addEventListener('click', function() {
+            if (i > 0) {
+                document.getElementById('q').innerHTML = `${i}) `+questions[--i].question;
+            }
+        });
+        reset.addEventListener('click', function() {
+            i = 0;
+            score = 0;
+            scoreDisplay.innerHTML = `${score}/10`;
+            next.style.display = 'inline-block';
+            prev.style.display = 'inline-block';
+            reset.style.display = 'none';
+            next.innerHTML = "Next";
+            next.style.backgroundColor = "#336699";
+            attemptedFlag.fill(false);
+            document.getElementById('q').innerHTML = `${i+1}) `+questions[i].question;
+        });
+    
+
+        
+        
+        
+
+    </script>
+</body>
+</html>

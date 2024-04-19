@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIE23123_Assignment2bc</title>
+    <style> 
+        *{
+            font-size: large;
+        }
+        table{
+            float:inline-start;
+            background-color:beige;
+        }
+        ol{
+            margin: 10px 300px;
+            float:inline-end;
+        }
+        td{
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+        ul{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><td><i>Column 1</i></td><td><i>Column 2</i></td></tr>
+        <tbody id="tableBody"></tbody>
+        <tr><td colspan="2"><button id='addButton'>Add Row</button><button id="removeButton">Remove Row</button></td></tr>
+    </table>
+
+    <ol id="list">
+        <input type="text" name = "INPUT" id="INPUT"><button id="addItem">Add Item</button>
+    </ol>
+    
+    
+    <script>
+        var i=0;
+        var tableBody = document.getElementById('tableBody');
+        document.getElementById('addButton').addEventListener('click',function(){
+            tableBody.innerHTML += `<td><i>(${++i},1)</i></td><td><i>(${i},2)</i></td>`;
+        });   
+        document.getElementById('removeButton').addEventListener('click',function(){
+            var tableContent = ``;
+            for(var j=1; j<i ; j++){
+                tableContent += `<tr><td><i>(${j},1)</i></td><td><i>(${j},2)</i></td></tr>`;
+            }
+            i--;
+            tableBody.innerHTML = tableContent;
+        });
+
+        var list = document.getElementById('list');
+
+        document.getElementById('addItem').addEventListener('click', function () {
+          var newItem = document.createElement('li');
+          newItem.textContent = document.getElementById('INPUT').value;
+          list.appendChild(newItem);
+          document.getElementById('INPUT').value = ""; // Clear the input field after adding
+        
+          // Add remove button to each list item
+          var removeButton = document.createElement('button');
+          removeButton.textContent = "Remove";
+          removeButton.addEventListener('click', function() {
+            list.removeChild(this.parentElement); // Remove the list item when clicked
+          });
+          newItem.appendChild(removeButton);
+        });
+    </script>
+</body>
+</html>

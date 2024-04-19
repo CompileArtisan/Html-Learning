@@ -76,6 +76,13 @@
             console.log('str.length: '+ str.length); //length is an attribute of the object
             console.log('    hello world   '.trim()); // removes whitespaces from start and end
 
+        // slice() vs substring() vs substr()
+            // slice() can take negative values
+            // substring() can't take negative values
+            // substr() takes two arguments: start and length (if 2nd argument is not given, it'll take the rest of the string)
+
+
+
             // Strings are immutable
             // str[0] = "J"; // This will give an error
 
@@ -98,12 +105,15 @@
             console.log("fruits.shift(): "+ fruits.shift());
             console.log("fruits.unshift('apple'): "+ fruits.unshift('apple'));
             console.log("fruits.splice(2, 0, 'lemon', 'peach'): "+ fruits.splice(2, 0, 'lemon', 'peach'));
+            // splice takes 3 arguments: index, number of elements to remove, elements to add
+            // what it does is it removes the elements from the index (if 2nd argument is non-zero) and adds the elements given in the arguments
             console.log("fruits.splice(2, 2): "+ fruits.splice(2, 2));
             console.log("fruits.concat(['lemon', 'peach']): "+ fruits.concat(['lemon', 'peach']));
             console.log("fruits.slice(1, 3): "+ fruits.slice(1, 3));
             console.log("fruits.sort(): "+ fruits.sort());
             console.log("fruits.reverse(): "+ fruits.reverse());
-            console.log("fruits.sort(function(a, b){return a-b}): "+ fruits.sort(function(a, b){return a-b}));
+            console.log("fruits.sort(function(a, b){return a-b}): "+ fruits.sort(function(a, b){return a-b}));            
+            console.log("fruits.toString(): "+ fruits.toString());
 
         // Arrays and String stuff
             console.log("fruits.toString(): "+ fruits.toString());

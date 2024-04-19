@@ -11,18 +11,26 @@
         Name: <input type="text" name="name"><br>
         Password: <input type="password" name="password"><br>
         Age: <input type="number" name="age"><br>
+        Email: <input type="email" name="email"><br>
         <button id="submit">Submit</button>
         <script>
             document.getElementById('submit').onclick = () => {
                 let name = document.lol.name.value;
-                let password = document.lol.password.value;
+                // let password = document.lol.password.value;
+                let password = document.forms["lol"]["password"].value;
                 let age = document.lol.age.value;
+                let email = document.lol.email.value;
+                let indexOfAt = email.indexOf('@');
+                let indexOfDot = email.lastIndexOf('.');
+                let indexOfSpace = email.indexOf(' ');
                 if(name.length==0){
                     alert("Name can't be empty");
                 } else if(password.length<6){
                     alert("Password can't be less than 6 characters");
                 } else if(age<20||age>30){
                     alert("Age must be between 20 and 30");
+                } else if(indexOfAt<1||indexOfDot<=indexOfAt+1||indexOfDot+2>=email.length||indexOfSpace!=-1){
+                    alert("Wrong email format");
                 } else {
                     alert("Name: "+name+"\nPassword: "+password+"\nAge: "+age);
                 }

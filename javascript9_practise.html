@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <hr>
+    <p>Enter the number of natural numbers to add: </p> <input type="number" id="number"> <button id="sum">sum</button>
+    <p id="print"><br></p>
+    <hr>
+    <p>Enter number to be reverse: </p> <input type="text" id="reverse"> <button id="lmao">reverse</button>
+    <p id="print1"><br></p>
+    <hr>
+    <hr>
+    <p>Enter string to check for vowel: </p> <input type="text" id="vowel"> <button id="lol">reverse</button>
+    <p id="print2"><br></p>
+    <hr>
+
+    <script>
+        document.getElementById("sum").onclick = () => {
+            let n = document.getElementById("number").value;
+            if(n<0) document.getElementById("print").innerHTML = "nah dude"
+            let sum = 0;
+            for(let i = 1; i <= n; i++) sum += i;
+            document.getElementById("print").innerHTML = sum;
+        }
+
+        document.getElementById("lmao").onclick = () => {
+            let n = document.getElementById("reverse").value;
+            // let reversed="";
+            // for(let i=n.length-1;i>-1;i--){
+            //     reversed+=n[i];
+            // } 
+            
+            // a smarter method is below
+            let reversed = n.split('').reverse().join('');
+
+            // document.getElementById("print1").innerHTML = reversed;
+            // or this
+            document.querySelector("#print1").innerHTML = reversed; 
+            // querySelector method returns the first element in the document that matches the specified selector.
+            // if nothing is found, it returns null
+        }
+        
+
+
+
+
+    </script>
+</body>
+</html>
