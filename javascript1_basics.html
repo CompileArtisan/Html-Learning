@@ -13,12 +13,15 @@
 
         <script>
         // Popup boxes
+        // 1) alert  2) confirm  3) prompt
             // 1) alert
             alert("Use Ctrl+Shift+J to open console\nDon\'t ask why, just do it!");
+            // just has one buttons saying 'OK'
             console.log("Hello World!");
 
             // 2) confirm
             let result = confirm("Press a button!");
+            // has two buttons saying "OK" and "Cancel"
             if(result) {
                 document.getElementById('p6').innerHTML = "You pressed OK!";
             } else {
@@ -27,6 +30,7 @@
 
             // 3) prompt
             let lmao = prompt("Enter your name: ");
+            // has two buttons saying "OK" and "Cancel" and a text box
             document.getElementById('p8').innerHTML = "Hello " + lmao + "!";
 
         // Variables (can also start with & or underscore)
@@ -57,7 +61,7 @@
             console.log("str.indexOf('World'): "+ str.indexOf('World')); // returns index of first occurance of the string
             console.log("str.lastIndexOf('World'): "+ str.lastIndexOf('World')); // returns index of last occurance of string
             //both indexOf() and lastIndexOf() return -1 if the string is not found
-            console.log("str.slice(0, 5): "+ str.slice(0, 5));
+            console.log("str.slice(0, 5): "+ str.slice(0, 5)); // returns all characters in [0,5)
             console.log("str.slice(-5): "+ str.slice(-5));
             console.log("str.slice(0, -5): "+ str.slice(0, -5));
             console.log("str.replace('World', 'There'): "+ str.replace('World', 'There'));
@@ -122,12 +126,18 @@
             console.log(text.match(/fox/));
 
         // Regex
-            console.log(text.match(/fox/g));
+            console.log(text.match(/fox/g)); //test.match(/fox/g) returns an array of all the occurances of the pattern
             console.log(text.match(/fox/));
             console.log(text.replace(/fox/g, "dog"));
             console.log(text.search(/fox/g));
             console.log(text.split(/fox/g));
             console.log(/fox/g.test(text));
+            // below code checks if the string contains the regex pattern
+            let pattern = /fox/g;
+            if(pattern.test(text)) console.log("Pattern found"); //pattern.test() returns true if the pattern is found, else false
+            else console.log("Pattern not found");
+
+
 
         // Dates
             let d = new Date();
