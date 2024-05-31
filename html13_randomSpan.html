@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="createIcon()">Create Icon</button>
+    <span id="icon" class="material-icons-sharp"></span>
+    <script>
+        function createIcon() {
+            let inputText = document.getElementById("input").value;
+            let iconSpan = document.getElementById("icon");
+            iconSpan.innerHTML = inputText;
+        }
+    </script>
+</body>
+</html>
